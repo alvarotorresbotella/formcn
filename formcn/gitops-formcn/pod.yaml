@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: formcn-pod
+  namespace: gitops-formcn
+  labels:
+    app: fromcn-pod
+spec:
+  containers:
+    - name: message
+      image: atbotella/demo:v1
+      env:
+        - name: CHARACTER
+          value: "gitops con Flux sobre cluster K3D"
+      resources:
+        requests:
+          cpu: 10m
+          memory: 30Mi
+        limits:
+          cpu: 10m
+          memory: 30Mi
