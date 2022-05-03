@@ -1,0 +1,13 @@
+kind: Service 
+apiVersion: v1
+metadata: 
+  name: formcn-service
+  namespace: gitops-formcn
+spec:
+  type : NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30011
+  selector:
+    app: formcn-pod
